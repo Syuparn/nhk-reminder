@@ -1,0 +1,12 @@
+{
+  "name": "nhk-reminder",
+  "version": "1.0.0",
+  "description": "気になるNHKの番組をGoogleカレンダーに自動登録するGAS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
