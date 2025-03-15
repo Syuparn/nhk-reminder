@@ -52,6 +52,8 @@ clasp push
 |-|-|
 |`NHK_API_KEY`|[NHK番組表APIのAPIキー](https://api-portal.nhk.or.jp/)|
 |`KEYWORDS`|カレンダーに登録したい番組を選択するキーワード（複数指定する場合は `,` 区切り）|
+|`NHK_AREA_ID`|NHK番組表APIのエリアID（デフォルト値: `130`（東京都））|
+|`ADVANCE_DAYS`|何日後の番組表を取得するか（デフォルト値: `3`）|
 
 5. プロジェクトにトリガーを追加
 
