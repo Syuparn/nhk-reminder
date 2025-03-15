@@ -19,3 +19,8 @@ export function getNHKAreaID(): string {
 
   return properties.getProperty("NHK_AREA_ID") || tokyoAreaID
 }
+
+export function getAdvanceDays(): number {
+  // default: 1 day
+  return parseInt(properties.getProperty("ADVANCE_DAYS") || "1")
+}

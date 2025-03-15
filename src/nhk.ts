@@ -1,11 +1,11 @@
-import { CalenderEvent } from "./calendar";
+import { CalendarEvent } from "./calendar";
 import { getNHKAreaID } from "./config";
 
 // サービスID
 const serviceIDSougou = "g1"; // NHK総合
 const serviceIDETV = "e1"; // Eテレ
 
-export function fetchNHKPrograms(date: Date, apiKey: string): CalenderEvent[] {
+export function fetchNHKPrograms(date: Date, apiKey: string): CalendarEvent[] {
   // NHK番組表API https://api-portal.nhk.or.jp/ のURL
   // NHK総合
   const urlSougou = fetchNHKProgramsURL({
@@ -23,6 +23,7 @@ export function fetchNHKPrograms(date: Date, apiKey: string): CalenderEvent[] {
   }) 
 
   const bodySougou = UrlFetchApp.fetch(urlSougou).getContentText();
+  Utilities.sleep(3000) // サーバーへ負荷がかからないよう3秒待機
   const bodyETV = UrlFetchApp.fetch(urlETV).getContentText();
 
   return [...toCalendarEvents(bodySougou, serviceIDSougou), ...toCalendarEvents(bodyETV, serviceIDETV)];
@@ -36,7 +37,7 @@ function fetchNHKProgramsURL({areaID, serviceID, date, apiKey}: {areaID: string,
   return `https://api.nhk.or.jp/v2/pg/list/${areaID}/${serviceID}/${formattedDate}.json?key=${apiKey}`
 }
 
-function toCalendarEvents(body: string, serviceID: string): CalenderEvent[] {
+function toCalendarEvents(body: string, serviceID: string): CalendarEvent[] {
   const obj = JSON.parse(body)
   const programs = obj["list"][serviceID]
 
