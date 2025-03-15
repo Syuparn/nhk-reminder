@@ -2,3 +2,7 @@
 
 # prevent ReferenceError occured by jest functions
 **/*.test.ts
+
+# ignore even valid files if in…
+.git/**
+node_modules/**

@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.97",
+    "typescript": "^5.8.2"
+  }
 }
