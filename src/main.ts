@@ -1,14 +1,10 @@
-type Calender = {
-  title: string
-  startDate: Date
-  endDate: Date
-  options: {
-    description: string
-  }
-}
+import { getNHKAPIKey } from "./config";
+import { fetchNHKPrograms } from "./nhk";
 
 function handler() {
-  console.log("Hello, world!");
+  const apiKey = getNHKAPIKey();
+  const programs = fetchNHKPrograms(new Date(), apiKey);
+  console.log(programs);
 }
 
 // HACK: enable to execute handler from GAS
