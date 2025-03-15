@@ -3,14 +3,22 @@
   "version": "1.0.0",
   "description": "気になるNHKの番組をGoogleカレンダーに自動登録するGAS",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Syuparn/nhk-reminder.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "syuparn",
   "license": "ISC",
   "dependencies": {
     "@types/google-apps-script": "^1.0.97",
     "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "esbuild-gas-plugin": "^0.9.0"
   }
 }
